@@ -1,21 +1,36 @@
-import createMongoClient from "./createMongoClient";
+const createMongoClient = require("./createMongoClient");
 
-/**
- * This function listens in real time all transactions
- * within the Lost Miners collection an updates a MongoDB dataset
- * @param {string} evmEndpoint example: https://mainnet.infura.io/v3/<<personal_key>>
- * @param {string} mongoEndpoint example: mongodb+srv://<user>:<password>@<user>.ekui24q.mongodb.net/?retryWrites=true&w=majority&appName=<ClusterName>
- */
-const listen = async (
-  evmEndpoint,
-  mongoEndpoint,
-  mongoDbName,
-  mongoCollectionName
-) => {
-  const mongoClient = createMongoClient(mongoEndpoint);
+const updateMongo = async (miner, strategy) => {
+  const { MONGO_ENDPOINT, MONGO_DB_NAME, MONGO_COLLECTION } = process.env;
+  let mongoClient;
+
+  try {
+    mongoClient = await createMongoClient(MONGO_ENDPOINT);
+
+    const mongoDb = await mongoClient.db(MONGO_DB_NAME);
+    const collection = await mongoDb.collection(MONGO_COLLECTION);
+    console.log(`Collection instance generated successfully`);
+    if (strategy === "add") {
+      const found = await collection.findOne({ id: miner.id });
+      if (found) {
+        console.log(`Miner ${miner.id} already exists on MongoDB`);
+        return true;
+      }
+      return await collection.insertOne(miner);
+    } else if (strategy === "remove") {
+      return await collection.deleteOne({ id: miner.id });
+    }
+  } catch (error) {
+    console.log(`Could not update MongoDB: ${error}`);
+  } finally {
+    if (mongoClient) {
+      try {
+        await mongoClient.close();
+      } catch (error) {
+        console.log(`Error closing MongoDB client: ${error}`);
+      }
+    }
+  }
 };
 
-const { EVM_ENDPOINT, MONGO_ENDPOINT, MONGO_DB_NAME, MONGO_COLLECTION } =
-  process.env;
 
-listen(EVM_ENDPOINT, MONGO_ENDPOINT, MONGO_DB_NAME, MONGO_COLLECTION);

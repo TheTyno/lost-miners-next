@@ -5,6 +5,7 @@ import {
   AccordionDetails,
   Chip,
   Box,
+  Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import traits from "../assets/traits.json";
@@ -23,7 +24,11 @@ const _removeTrait = (trait, value, setTraitsState) => {
 const TraitsFilter = ({ traitsState, setTraitsState }) => (
   <>
     <Accordion>
-      <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}>
+      <AccordionSummary
+        expandIcon={
+          <ExpandMoreIcon sx={{ color: "white", fontWeight: "bold" }} />
+        }
+      >
         Traits Filter
       </AccordionSummary>
       <AccordionDetails>
@@ -51,7 +56,18 @@ const TraitsFilter = ({ traitsState, setTraitsState }) => (
           <Chip
             key={value}
             variant="outlined"
-            label={`${trait}: ${value}`}
+            label={
+              <>
+                <Typography
+                  color="text.secondary"
+                  variant="caption"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  {trait}:{" "}
+                </Typography>
+                {value}
+              </>
+            }
             sx={{ color: "silver" }}
             onDelete={() => _removeTrait(trait, value, setTraitsState)}
           />

@@ -31,14 +31,22 @@ export default function Home() {
       alignItems="center"
     >
       <Grid item>
-        <Typography variant="h2" color="text.secondary">
+        <Typography
+          variant="h2"
+          color="text.secondary"
+          sx={{ fontWeight: "bold" }}
+        >
           THE FORGOTTENS
         </Typography>
       </Grid>
       <Grid item>
         <Link href="/holdbacks">
           {" "}
-          <Button variant="contained" color="primary" sx={{ margin: 1 }}>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{ margin: 1, fontWeight: "bold" }}
+          >
             Go to BPX Holdbacks List
           </Button>
         </Link>
@@ -50,7 +58,11 @@ export default function Home() {
         />
       </Grid>
       <Grid item>
-        <Alert severity="info" variant="filled" sx={{ margin: 2 }}>
+        <Alert
+          severity="info"
+          variant="filled"
+          sx={{ margin: 2, fontWeight: "bold" }}
+        >
           Click on any Miner to check it on OpenSea
         </Alert>
       </Grid>

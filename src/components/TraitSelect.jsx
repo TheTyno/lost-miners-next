@@ -47,7 +47,9 @@ export default function TraitSelect({
   return (
     <div>
       <FormControl sx={{ m: 1, width: 300 }} size="small">
-        <InputLabel id="demo-multiple-chip-label">{name}</InputLabel>
+        <InputLabel id="demo-multiple-chip-label" sx={{ fontWeight: "bold" }}>
+          {name}
+        </InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
@@ -56,6 +58,7 @@ export default function TraitSelect({
           onChange={handleChange}
           input={<OutlinedInput id="select-multiple-chip" label={name} />}
           MenuProps={MenuProps}
+          sx={{ fontWeight: "bold" }}
         >
           {options.map((option) => (
             <MenuItem

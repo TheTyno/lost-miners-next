@@ -11,8 +11,9 @@ const theme = createTheme({
           color: "white",
           borderStyle: "solid",
           borderColor: "white",
-          fontSize: 14,
+          fontSize: 20,
           margin: 15,
+          fontWeight: "bold",
         },
       },
     },
@@ -47,7 +48,6 @@ const theme = createTheme({
           width: "5em",
           height: "7em",
           borderRadius: "5px",
-          backgroundColor: "#0c111a",
           boxShadow:
             "0 8px 12px rgba(255, 255, 255, 0.2), 0 4px 8px rgba(255, 255, 255, 0.19)",
           "&:hover": {
@@ -72,10 +72,8 @@ const theme = createTheme({
     // Add other palette options as needed
   },
   typography: {
-    fontFamily: "Roboto, Arial, sans-serif", // Font family
-    // Add other typography options as needed
+    fontFamily: "Roboto, Arial, sans-serif",
   },
-  // Add other theme options as needed
 });
 
 function MyApp({ Component, pageProps }) {

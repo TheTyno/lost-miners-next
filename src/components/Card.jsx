@@ -1,9 +1,5 @@
 import { useState } from "react";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import Box from "@mui/material/Box";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
+import { Card, CardMedia, Menu, MenuItem, Typography } from "@mui/material";
 
 const CardComponent = ({ picture, minerId, claimPassId }) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -37,16 +33,17 @@ const CardComponent = ({ picture, minerId, claimPassId }) => {
           image={picture}
           alt="Could not load Miner"
         />
-        <Box
+        <Typography
           sx={{
-            fontSize: 9,
+            fontSize: 12,
             textAlign: "center",
-            marginTop: "3px",
+            marginTop: "1px",
             backgroundColor: "#0c111a",
+            fontWeight: "bold",
           }}
         >
           #{minerId}
-        </Box>
+        </Typography>
       </Card>
       <Menu
         id="collections-menu"

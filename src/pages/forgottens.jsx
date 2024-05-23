@@ -1,18 +1,8 @@
 import { useState } from "react";
-import {
-  Grid,
-  Alert,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-  Button,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Grid, Alert, Typography, Button } from "@mui/material";
+import TraitsFilter from "../components/TraitsFilter";
 import Card from "../components/Card";
 import unclaimedMiners from "../assets/forgottens.json";
-import traits from "../assets/traits.json";
-import TraitsSelect from "../components/TraitSelect";
 import Link from "next/link";
 
 // Home function that is reflected across the site
@@ -54,30 +44,10 @@ export default function Home() {
         </Link>
       </Grid>
       <Grid item>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-          >
-            Traits Filter
-          </AccordionSummary>
-          <AccordionDetails>
-            <Grid
-              container
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
-            >
-              {Object.keys(traits).map((trait) => (
-                <TraitsSelect
-                  key={trait}
-                  name={trait}
-                  options={traits[trait]}
-                  setTraitsState={setTraitsState}
-                />
-              ))}
-            </Grid>
-          </AccordionDetails>
-        </Accordion>
+        <TraitsFilter
+          traitsState={traitsState}
+          setTraitsState={setTraitsState}
+        />
       </Grid>
       <Grid item>
         <Alert severity="info" variant="filled" sx={{ margin: 2 }}>

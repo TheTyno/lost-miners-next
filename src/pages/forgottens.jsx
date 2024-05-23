@@ -1,12 +1,18 @@
 import { useState } from "react";
-import { Grid, Alert, Typography, Button } from "@mui/material";
+import {
+  Grid,
+  Alert,
+  Typography,
+  Button,
+  CircularProgress,
+} from "@mui/material";
 import TraitsFilter from "../components/TraitsFilter";
 import Card from "../components/Card";
 import unclaimedMiners from "../assets/forgottens.json";
 import Link from "next/link";
 
 // Home function that is reflected across the site
-export default function Home() {
+export default function Forgottens() {
   const lostMinersPicturesURL =
     "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a";
   const traitsInitialState = {
@@ -22,6 +28,7 @@ export default function Home() {
     Headlamp: [],
   };
   const [traitsState, setTraitsState] = useState(traitsInitialState);
+  const [holdbacksLoading, setHoldbacksLoading] = useState(false);
 
   return (
     <Grid
@@ -32,7 +39,7 @@ export default function Home() {
     >
       <Grid item>
         <Typography
-          variant="h2"
+          variant="h4"
           color="text.secondary"
           sx={{ fontWeight: "bold" }}
         >
@@ -46,8 +53,14 @@ export default function Home() {
             variant="contained"
             color="primary"
             sx={{ margin: 1, fontWeight: "bold" }}
+            disabled={holdbacksLoading}
+            onClick={() => setHoldbacksLoading(true)}
           >
-            Go to BPX Holdbacks List
+            {holdbacksLoading ? (
+              <CircularProgress />
+            ) : (
+              "Go to BPX Holdbacks List"
+            )}
           </Button>
         </Link>
       </Grid>

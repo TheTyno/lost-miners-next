@@ -39,7 +39,7 @@ export default function Forgottens() {
     >
       <Grid item>
         <Typography
-          variant="h4"
+          variant="h5"
           color="text.secondary"
           sx={{ fontWeight: "bold" }}
         >

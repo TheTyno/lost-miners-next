@@ -103,9 +103,9 @@ export default function Holdbacks() {
     >
       <Grid item>
         <Typography
-          variant="h4"
+          variant="h5"
           color="text.secondary"
-          sx={{ fontWeight: "bold" }}
+          sx={{ fontWeight: "bold", alignTest: "center" }}
         >
           MINERS OWNED BY BLOKPAX
         </Typography>

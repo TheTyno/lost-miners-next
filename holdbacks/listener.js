@@ -19,8 +19,10 @@ const updateMongo = async (miner, strategy) => {
         console.log(`Miner ${miner.id} already exists on MongoDB`);
         return true;
       }
+      console.log(`Inserting miner ${miner.id} on MongoDB`);
       return await collection.insertOne(miner);
     } else if (strategy === "remove") {
+      console.log(`Removing miner ${miner.id} from MongoDB`);
       return await collection.deleteOne({ id: miner.id });
     }
   } catch (error) {

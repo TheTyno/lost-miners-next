@@ -44,8 +44,8 @@ export default function HomePage() {
         <Button
           variant="contained"
           color="secondary"
-          onClick={() => handleButtonClick("/holdback")}
-          disabled={loading && loadingButton !== "/holdback"} // Disable if loading and not the loading button
+          onClick={() => handleButtonClick("/holdbacks")}
+          disabled={loading && loadingButton !== "/holdbacks"} // Disable if loading and not the loading button
           sx={{ fontWeight: "bold" }}
         >
           {loading && loadingButton === "/holdbacks" ? (

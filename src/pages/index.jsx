@@ -48,7 +48,7 @@ export default function HomePage() {
           disabled={loading && loadingButton !== "/holdback"} // Disable if loading and not the loading button
           sx={{ fontWeight: "bold" }}
         >
-          {loading && loadingButton === "/holdback" ? (
+          {loading && loadingButton === "/holdbacks" ? (
             <CircularProgress size={24} color="inherit" />
           ) : (
             "Go to Holdback"

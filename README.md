@@ -17,14 +17,20 @@ As BPX owns about 3500 different wallets where HoldBacks miners are stored, then
 
 Thats why we use MongoDB to store the holdbacks list and everytime the listener script intercept a new transfer from any BPX wallet, it updates MongoDB to be in sync.
 
-We need the folling env variables:
+We need the following env variables:
 
-`MONGO_ENDPOINT`: MongoDB endpint, **I suggest using MongoDB Atlas Free tier**
-`MONGO_DB_NAME`: The name of the mongo database on the cluster we're connected to
-`MONGO_COLLECTION` The name of the collection where to store the list of holdbakcs miners
+- `MONGO_ENDPOINT`: MongoDB endpint, **I suggest using MongoDB Atlas Free tier**
+- `MONGO_DB_NAME`: The name of the mongo database on the cluster we're connected to
+- `MONGO_COLLECTION` The name of the collection where to store the list of holdbakcs miners
 
 ### About the holdbacks directory
 
 That directore holds the listener script that will listen for real time on chain data and update the MongoDB accordingly.
 
 However, The MongDB has to be first initialized with the current BPX owned miners snapshot, thats why there's another util script called `initializeMongo` that receives this snapshot and populates MongoDB with those miners that are currently owned by BPX. This script should be ran once as after that the listener script should keep the mongodb in sync
+
+
+### How to run it
+
+- `npm run dev`: To run it on your local machine
+- `npm start`: To run it on a prod environment

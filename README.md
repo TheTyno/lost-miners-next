@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LOST MINERS FORGOTTENS AND HOLDBACKS
 
-## Getting Started
+This repository consist of 2 different Apps:
 
-First, run the development server:
+- A NextJS app that host the actual Lost Miners Holdbacks and forgottens pages
+- A listener script that listens onchain data in real time to update the holdbakcs list
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Whats needed
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### an EVM endpoint like Infura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In order to listen for onchain data, we need to connect to an EVM endpoint. I recomend using Infura and set the websock endpoint into an env var called `EVM_ENDPOINT`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### MongoDB
 
-## Learn More
+As BPX owns about 3500 different wallets where HoldBacks miners are stored, then we need a way to track those holdbacks as requesting those 3500 wallets on runtime is impossible because of the amount of wallets.
 
-To learn more about Next.js, take a look at the following resources:
+Thats why we use MongoDB to store the holdbacks list and everytime the listener script intercept a new transfer from any BPX wallet, it updates MongoDB to be in sync.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We need the folling env variables:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`MONGO_ENDPOINT`: MongoDB endpint, **I suggest using MongoDB Atlas Free tier**
+`MONGO_DB_NAME`: The name of the mongo database on the cluster we're connected to
+`MONGO_COLLECTION` The name of the collection where to store the list of holdbakcs miners
 
-## Deploy on Vercel
+### About the holdbacks directory
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+That directore holds the listener script that will listen for real time on chain data and update the MongoDB accordingly.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+However, The MongDB has to be first initialized with the current BPX owned miners snapshot, thats why there's another util script called `initializeMongo` that receives this snapshot and populates MongoDB with those miners that are currently owned by BPX. This script should be ran once as after that the listener script should keep the mongodb in sync

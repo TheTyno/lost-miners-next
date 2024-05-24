@@ -31,6 +31,7 @@ export default function HomePage() {
           color="primary"
           onClick={() => handleButtonClick("/forgottens")}
           disabled={loading && loadingButton !== "/forgottens"} // Disable if loading and not the loading button
+          sx={{ fontWeight: "bold" }}
         >
           {loading && loadingButton === "/forgottens" ? (
             <CircularProgress size={24} color="inherit" />
@@ -45,6 +46,7 @@ export default function HomePage() {
           color="secondary"
           onClick={() => handleButtonClick("/holdback")}
           disabled={loading && loadingButton !== "/holdback"} // Disable if loading and not the loading button
+          sx={{ fontWeight: "bold" }}
         >
           {loading && loadingButton === "/holdback" ? (
             <CircularProgress size={24} color="inherit" />

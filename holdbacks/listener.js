@@ -1,4 +1,7 @@
+const Web3 = require("web3");
 const createMongoClient = require("./createMongoClient");
+const lostMinersABI = require("./lostMinersABI.json");
+const bpxWallets = require("./bpxWallets.json");
 
 const updateMongo = async (miner, strategy) => {
   const { MONGO_ENDPOINT, MONGO_DB_NAME, MONGO_COLLECTION } = process.env;
@@ -33,4 +36,42 @@ const updateMongo = async (miner, strategy) => {
   }
 };
 
+const listener = async () => {
+  const web3 = new Web3(
+    new Web3.providers.WebsocketProvider(process.env.EVM_ENDPOINT)
+  );
 
+  const contractAddress = "0x3bcacb18f4d60c8cba68cd95860daf3e32bebcb6"; // Lost Miners of the Ether contract address
+  const contract = new web3.eth.Contract(lostMinersABI, contractAddress);
+
+  console.log("Listening for NFT transfers");
+
+  contract.events
+    .Transfer({
+      fromBlock: "latest",
+    })
+    .on("data", (event) => {
+      const { from, to, tokenId } = event.returnValues;
+      console.log(
+        `NFT Transfer detected: Token ID ${tokenId} from ${from} to ${to}`
+      );
+
+      const minerMetadata = fetch(
+        `https://ipfs.io/ipfs/QmNQpTps8TerUmnYihFFePHYGLSaVtw9uEmxvcm3MFxukZ/${tokenId}`
+      );
+
+      // If Miner was sent from a BPX wallet to a non bpx owned wallet. Remove it
+      if (bpxWallets.includes(from) && !bpxWallets.includes(to)) {
+        const tx = updateMongo(minerMetadata, "remove");
+        console.log(tx);
+      }
+      // If Miner was sent to a BPX wallet, add it to MongoDB
+      else if (bpxWallets.includes(to) && !bpxWallets.includes(from)) {
+        const tx = updateMongo(minerMetadata, "add");
+        console.log(tx);
+      }
+    })
+    .on("error", console.error);
+};
+
+listener();

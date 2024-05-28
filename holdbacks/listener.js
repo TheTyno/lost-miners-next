@@ -3,6 +3,12 @@ const createMongoClient = require("./createMongoClient");
 const lostMinersABI = require("./lostMinersABI.json");
 const bpxWallets = require("./bpxWallets.json");
 
+/**
+ * Updates MongoDB, strategy can be "add" to add a new miner into the DB or "remove" to delete a miner from the DB
+ * @param {object} miner
+ * @param {add | remove} strategy
+ * @returns object
+ */
 const updateMongo = async (miner, strategy) => {
   const { MONGO_ENDPOINT, MONGO_DB_NAME, MONGO_COLLECTION } = process.env;
   let mongoClient;
@@ -38,6 +44,9 @@ const updateMongo = async (miner, strategy) => {
   }
 };
 
+/**
+ * Listens to Lost Miner of the Ether NFT collection and calls updateMongo if a miner is added/moved from any BPX wallet
+ */
 const listener = async () => {
   const web3 = new Web3(
     new Web3.providers.WebsocketProvider(process.env.EVM_ENDPOINT)

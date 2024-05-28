@@ -47,6 +47,16 @@ export default function Forgottens() {
         </Typography>
       </Grid>
       <Grid item>
+        <Typography
+          variant="subtitle1"
+          color="text.primary"
+          sx={{ fontWeight: "bold" }}
+        >
+          <span style={{ color: "#ebd36c" }}>Unclaimed Miners:</span> Lost but
+          Never Forgotten
+        </Typography>
+      </Grid>
+      <Grid item>
         <Link href="/holdbacks">
           {" "}
           <Button

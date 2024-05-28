@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
+import Typography from "@mui/material/Typography";
 import { useRouter } from "next/router";
 
 export default function HomePage() {
@@ -20,12 +21,29 @@ export default function HomePage() {
     <div
       style={{
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
+        textAlign: "center",
+        padding: "20px",
       }}
     >
-      <div style={{ marginRight: "10px" }}>
+      <Typography variant="h2" gutterBottom>
+        Lost Miners of the Ether
+      </Typography>
+      <img
+        src="https://pbs.twimg.com/profile_images/1580935024081354754/p9Lz1R3h_400x400.jpg"
+        alt="Lost Miners of the Ether"
+        style={{
+          width: "50%",
+          maxWidth: "200px",
+          height: "auto",
+          marginBottom: "20px",
+          borderRadius: "5px",
+        }}
+      />
+      <div style={{ display: "flex", gap: "10px" }}>
         <Button
           variant="contained"
           color="primary"
@@ -39,8 +57,6 @@ export default function HomePage() {
             "Go to Forgottens"
           )}
         </Button>
-      </div>
-      <div>
         <Button
           variant="contained"
           color="secondary"

@@ -1,5 +1,10 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
 
+/**
+ * Opens a connection to a MongoDB database
+ * @param {string} mongoEndpoint
+ * @returns
+ */
 const createMongoClient = async (mongoEndpoint) => {
   try {
     console.log("Opening connection to MongoDB");
@@ -12,7 +17,6 @@ const createMongoClient = async (mongoEndpoint) => {
       },
     });
 
-    // Connect to MongoDB
     await client.connect();
 
     console.log("Connected to MongoDB successfully");
@@ -20,7 +24,7 @@ const createMongoClient = async (mongoEndpoint) => {
     return client;
   } catch (error) {
     console.error("Error connecting to MongoDB:", error.message);
-    return null; // Returning null instead of false for better consistency
+    return null;
   }
 };
 

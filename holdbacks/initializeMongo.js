@@ -6,8 +6,6 @@ const holdbacksSnapshot = require("./holdbacksSnapshot.json");
  * This script will initialize a MongoDB with the current BPX holdback miners,
  * a snapshot of that miners list is needed.
  * @param {object} snapshot array of miners metadata
- * @param {string} mongoEndpoint example: mongodb+srv://<user>:<password>@<user>.ekui24q.mongodb.net/?retryWrites=true&w=majority&appName=<ClusterName>
- * @param {string} mongoCollection name of the collection where holdback miners will be stored
  */
 const main = async (snapshot) => {
   const { MONGO_ENDPOINT, MONGO_DB_NAME, MONGO_COLLECTION } = process.env;

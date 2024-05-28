@@ -3102,37 +3102,6 @@
       ]
     },
     {
-      "id": 321,
-      "name": 321,
-      "image": "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a/321.png",
-      "attributes": [
-        {
-          "trait_type": "Background",
-          "value": "Red"
-        },
-        {
-          "trait_type": "Backpack",
-          "value": "White Canary"
-        },
-        {
-          "trait_type": "Body",
-          "value": "Male"
-        },
-        {
-          "trait_type": "Clothing",
-          "value": "Green Hoodie"
-        },
-        {
-          "trait_type": "Facial Hair",
-          "value": "Big White Beard"
-        },
-        {
-          "trait_type": "Headlamp",
-          "value": "Yellow"
-        }
-      ]
-    },
-    {
       "id": 322,
       "name": 322,
       "image": "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a/322.png",
@@ -17946,45 +17915,6 @@
       ]
     },
     {
-      "id": 1683,
-      "name": 1683,
-      "image": "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a/1683.png",
-      "attributes": [
-        {
-          "trait_type": "Background",
-          "value": "Desert"
-        },
-        {
-          "trait_type": "Backpack",
-          "value": "Gold"
-        },
-        {
-          "trait_type": "Body",
-          "value": "Female"
-        },
-        {
-          "trait_type": "Clothing",
-          "value": "Adventurer Vest"
-        },
-        {
-          "trait_type": "Eyes",
-          "value": "Gold Goggles"
-        },
-        {
-          "trait_type": "Hair",
-          "value": "Short Black Hair"
-        },
-        {
-          "trait_type": "Head",
-          "value": "Witch Hat"
-        },
-        {
-          "trait_type": "Headlamp",
-          "value": "Red"
-        }
-      ]
-    },
-    {
       "id": 1684,
       "name": 1684,
       "image": "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a/1684.png",
@@ -18136,17 +18066,6 @@
         {
           "trait_type": "Headlamp",
           "value": "Candle"
-        }
-      ]
-    },
-    {
-      "id": 1705,
-      "name": 1705,
-      "image": "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a/1705.png",
-      "attributes": [
-        {
-          "trait_type": "Body",
-          "value": "Tommyknocker Astronaut"
         }
       ]
     },
@@ -53557,33 +53476,6 @@
       ]
     },
     {
-      "id": 4842,
-      "name": 4842,
-      "image": "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a/4842.png",
-      "attributes": [
-        {
-          "trait_type": "Background",
-          "value": "Dark Green"
-        },
-        {
-          "trait_type": "Body",
-          "value": "Fire"
-        },
-        {
-          "trait_type": "Clothing",
-          "value": "Green Vest"
-        },
-        {
-          "trait_type": "Face",
-          "value": "Green Gas Mask"
-        },
-        {
-          "trait_type": "Headlamp",
-          "value": "Blue"
-        }
-      ]
-    },
-    {
       "id": 4843,
       "name": 4843,
       "image": "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a/4843.png",
@@ -56096,37 +55988,6 @@
         {
           "trait_type": "Headlamp",
           "value": "White"
-        }
-      ]
-    },
-    {
-      "id": 5074,
-      "name": 5074,
-      "image": "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a/5074.png",
-      "attributes": [
-        {
-          "trait_type": "Background",
-          "value": "Dark Blue"
-        },
-        {
-          "trait_type": "Body",
-          "value": "Male"
-        },
-        {
-          "trait_type": "Clothing",
-          "value": "Gray Hoodie"
-        },
-        {
-          "trait_type": "Eyes",
-          "value": "Pink Sunglasses"
-        },
-        {
-          "trait_type": "Facial Hair",
-          "value": "Short Pink Beard"
-        },
-        {
-          "trait_type": "Headlamp",
-          "value": "Red"
         }
       ]
     },
@@ -73135,41 +72996,6 @@
         {
           "trait_type": "Headlamp",
           "value": "Pink"
-        }
-      ]
-    },
-    {
-      "id": 6648,
-      "name": 6648,
-      "image": "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a/6648.png",
-      "attributes": [
-        {
-          "trait_type": "Background",
-          "value": "Red"
-        },
-        {
-          "trait_type": "Backpack",
-          "value": "Yellow Canary"
-        },
-        {
-          "trait_type": "Body",
-          "value": "Female"
-        },
-        {
-          "trait_type": "Clothing",
-          "value": "Red Vest"
-        },
-        {
-          "trait_type": "Hair",
-          "value": "Short Brown Hair"
-        },
-        {
-          "trait_type": "Head",
-          "value": "Witch Hat"
-        },
-        {
-          "trait_type": "Headlamp",
-          "value": "Blue"
         }
       ]
     },
@@ -106293,33 +106119,6 @@
         {
           "trait_type": "Headlamp",
           "value": "Yellow"
-        }
-      ]
-    },
-    {
-      "id": 9672,
-      "name": 9672,
-      "image": "https://ipfs.io/ipfs/QmUGziYHGuwJQG9K4Buaxmh2f7gUsfi2HbAVub9yA4WQ1a/9672.png",
-      "attributes": [
-        {
-          "trait_type": "Background",
-          "value": "Orange"
-        },
-        {
-          "trait_type": "Body",
-          "value": "Male"
-        },
-        {
-          "trait_type": "Clothing",
-          "value": "Gray Hoodie"
-        },
-        {
-          "trait_type": "Facial Hair",
-          "value": "Big Zebra Beard"
-        },
-        {
-          "trait_type": "Headlamp",
-          "value": "White"
         }
       ]
     },

@@ -45,3 +45,19 @@ However, The MongDB has to be first initialized with the current BPX owned miner
 - `npm start`: To run it on a prod environment
 
 Both scripts will start the listener script and the NextJS app
+
+## Home page example
+
+![](./homepage.png)
+
+## Holdbacks page example
+
+![](./holdbacks.png)
+
+## Forgottens page example
+
+![](./forgottens.png)
+
+## Trait Filter example
+
+![](./traitFilter.png)
